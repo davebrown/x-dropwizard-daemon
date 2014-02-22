@@ -9,26 +9,21 @@
         <version>0.1</version>
     </parent>
 
-    <groupId>com.robertcboll.dropwizard</groupId>
     <artifactId>dropwizard-daemon</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
-    <name>[Dropwizard Daemon] Akuma</name>
+    <name>[Dropwizard Daemon] Akuma Integration</name>
     <description/>
 
     <properties/>
 
     <dependencies>
-
         <!-- akuma -->
         <dependency>
             <groupId>com.sun.akuma</groupId>
             <artifactId>akuma</artifactId>
             <version>1.4</version>
         </dependency>
-
     </dependencies>
-
-    <build/>
 
 </project>

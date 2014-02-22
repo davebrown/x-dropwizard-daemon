@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * Daemonizes the service, if the @{link PROPERTY_DAEMON} is set to "true".
+ * Daemonizes the service, if the {@code PROPERTY_DAEMON} is set to {@code true}.
  */
 public abstract class DaemonApplication<T extends Configuration> extends Application<T> {
 
