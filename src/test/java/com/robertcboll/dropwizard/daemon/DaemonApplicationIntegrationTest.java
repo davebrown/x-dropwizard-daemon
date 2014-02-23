@@ -12,7 +12,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Tests that the accompanying script {@code scripts/test-non-blocking.sh} executes without blocking. A 10 second timer
+ * Tests that the accompanying script {@code scripts/test-non-blocking.sh} executes without blocking. A timer
  * is used to determine if the script blocks, so this is particularly susceptible to false negatives. It should,
  * however, be relatively safe from false positives.
  */
@@ -22,22 +22,16 @@ public class DaemonApplicationIntegrationTest {
 
     private final static Runtime RUN = Runtime.getRuntime();
 
-    @BeforeClass
-    public static void printWarning() {
-        log.info("These tests involve long periods of idle waiting!!! This is necessary to test properly whether " +
-                "the daemon is releasing it's caller. Disable using -DskipTests to speed up build times.");
-    }
-
     @Test
     public void testNonBlocking() throws Exception {
-        assertFalse("the thread blocks for shorter than 10 seconds",
-                checkIfBlocks(getScript("scripts/test-non-blocking.sh"), 10000, 100));
+        assertFalse("the thread blocks for shorter than 5 seconds",
+                checkIfBlocks(getScript("scripts/test-non-blocking.sh"), 5000, 100));
     }
 
     @Test
     public void testBlocking() throws Exception {
-        assertTrue("the thread blocks for longer than 10 seconds",
-                checkIfBlocks(getScript("scripts/test-blocking.sh"), 10000, 100));
+        assertTrue("the thread blocks for longer than 5 seconds",
+                checkIfBlocks(getScript("scripts/test-blocking.sh"), 5000, 100));
     }
 
     /**

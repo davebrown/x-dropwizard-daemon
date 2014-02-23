@@ -1,0 +1,9 @@
+logging:
+  appenders:
+    - type: file
+      threshold: ALL
+      currentLogFilename: ${logdir}/test-app.log
+      archivedLogFilenamePattern: ${logdir}/test-app-%d.log.gz
+      archivedFileCount: 5
+
+  level: INFO
