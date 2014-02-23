@@ -27,14 +27,12 @@ Make your application inherit from `DaemonApplication`.
 ```java
 
 public class ExampleDaemon extends DaemonApplication<Configuration>
-
 ```
 
 In your application's `main` method, call `daemonize()` before `run(args)`.
 ```java
 
 new ExampleDaemon().daemonize().run(args);
-
 ```
 
 You're all set! Your application will launch as a daemon process into the background.
