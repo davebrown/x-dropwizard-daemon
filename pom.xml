@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.robertcboll.dropwizard</groupId>
-        <artifactId>parent</artifactId>
-        <version>0.1</version>
-    </parent>
+  <groupId>com.robertcboll.dropwizard</groupId>
+  <artifactId>dropwizard-daemon</artifactId>
+  <version>0.2-SNAPSHOT</version>
 
-    <artifactId>dropwizard-daemon</artifactId>
-    <version>0.1</version>
+  <name>[Dropwizard Daemon] Akuma Integration</name>
+  <description/>
 
-    <name>[Dropwizard Daemon] Akuma Integration</name>
-    <description/>
+  <scm>
+    <connection>scm:git:git://github.com/davebrown/x-dropwizard-daemon.git</connection>
+  </scm>
 
-    <properties/>
+  <properties>
+    <dropwizard.version>1.0.5</dropwizard.version>
+  </properties>
 
-    <dependencies>
-        <!-- akuma -->
-        <dependency>
-            <groupId>org.kohsuke</groupId>
-            <artifactId>akuma</artifactId>
-            <version>1.9</version>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>io.dropwizard</groupId>
+      <artifactId>dropwizard-core</artifactId>
+      <version>${dropwizard.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+    <!-- akuma -->
+    <dependency>
+      <groupId>org.kohsuke</groupId>
+      <artifactId>akuma</artifactId>
+      <version>1.10</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>21.0</version>
+    </dependency>
+  </dependencies>
 
-    <build>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </testResource>
-        </testResources>
-    </build>
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+  </build>
 
 </project>
